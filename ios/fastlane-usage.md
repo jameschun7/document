@@ -34,17 +34,18 @@ fastlane init
 
 프로젝트 디렉토리에서 이 명령어를 실행해주면 fastlane 스크립트가 생성된다.
 
-만약 스크립트 작성후 fastlane 이 실행되지 않는다면 bundler 설치를 해줘야 할 것이다.
-
-아마도 이 부분때문에 bundler 로 환경설정 하라고 권장하는 것 같다.
-
-```
-gem install bundler
-```
-
 ### fastlane 으로 터미널 명령어 실행하기
+
+```ruby
+lane :lint_pod do
+	Action.sh("pod spec lint --verbose ../UniversalSDK.podspec")
+end
+```
 
 ### framework 빌드 및 배포하기
 
 ### git 명령어 사용하기
 
+
+
+[fastlane docs for iOS Setup](https://docs.fastlane.tools/getting-started/ios/setup/)
