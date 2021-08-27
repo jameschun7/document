@@ -1,16 +1,10 @@
-# fastlane iOS 사용법
-
-## Setup
-
 일단 fastlane 을 설치하는 방법은 여러가지가 있다.
 
 - bundler
 - brew
 - macOS 의 system ruby
 
-하지만 공식문서를 보면 bundler 를 가장 권장하며 시스템 ruby 는 권장하지 않는다.
-
-### Xcode command line tools (macOS)
+## Xcode command line tools (macOS)
 
 clt 는 git, svn, perl, python 등 여러 컴파일러를 제공해줍니다. (보통 homebrew 설치시 자동설치됩니다)
 
@@ -20,15 +14,15 @@ clt 는 git, svn, perl, python 등 여러 컴파일러를 제공해줍니다. (�
 xcode-select --install
 ```
 
-### Installing *fastlane*
+## Installing *fastlane*
 
 *fastlane*은 여러 가지 방법으로 설치할 수 있습니다. 선호하는 방법은 [*Bundler*](https://bundler.io/)입니다. *fastlane*은 Homebrew를 통해 직접 설치할 수도 있습니다(macOS의 경우). macOS의 시스템 Ruby를 사용하는 것은 가능하지만 종속성을 관리하기 어렵고 충돌을 일으킬 수 있으므로 권장하지 않습니다.
 
-#### Managed Ruby environment + Bundler (macOS/Linux/Windows)
+### Managed Ruby environment + Bundler (macOS/Linux/Windows)
 
 ruby는 시스템루비가 아닌 버전(2.5 이상)을 새로 설치하고 bundler 를 이용해서 fastlane 을 설치하는 가이드입니다.(bundler를 설치하려면 gem 이라는 ruby 라이브러리 패키지가 필요하다. 선행조건)
 
-**Ruby**
+#### Ruby
 
 macOS를 사용하는 경우 시스템 Ruby는 권장하지 않습니다. [시스템 환경을 변경하지 않고 Ruby를 설치하는 방법은 다양합니다](https://www.ruby-lang.org/en/documentation/installation/#managers). macOS 및 Linux의 경우 *rbenv*는 Ruby 환경을 관리하는 가장 인기 있는 방법 중 하나입니다.
 
@@ -39,7 +33,7 @@ $ ruby --version
 ruby 2.7.2p137 (2020-10-01 revision 5445e04352) [x86_64-darwin19]
 ```
 
-**Bundler**
+#### Bundler
 
 *fastlane*에 대한 종속성을 정의하려면 *Bundler* 및 `Gemfile`을 사용하는 것이 좋습니다. 이렇게 하면 사용할 *fastlane* 버전과 해당 종속성이 명확하게 정의되고 *fastlane* 실행 속도도 빨라집니다.
 
@@ -57,7 +51,7 @@ gem "fastlane"
 - CI에서 `bundle install`를 첫 번째 빌드 단계로 추가합니다.
 - *fastlane*을 업데이트하려면 `bundle update fastlane`을 실행하세요.
 
-#### Homebrew (macOS)
+### Homebrew (macOS)
 
 이렇게 하면 Ruby를 별도로 설치할 필요가 없으며 대신 *homebrew*가 *fastlane*에 가장 적합한 Ruby 버전을 설치합니다. 자세한 내용은 [이 페이지](https://formulae.brew.sh/formula/fastlane)를 참조하세요.
 
@@ -65,7 +59,7 @@ gem "fastlane"
 brew install fastlane
 ```
 
-#### System Ruby + RubyGems (macOS/Linux/Windows)
+### System Ruby + RubyGems (macOS/Linux/Windows)
 
 이것은 로컬 환경에 권장되지 않지만 시스템 Ruby 환경에 *fastlane*을 설치할 수 있습니다. `sudo`를 사용하면 나중에 파일 권한으로 인해 원치 않는 결과가 자주 발생하고 환경 관리가 더 어려워집니다.
 
